@@ -1,0 +1,195 @@
+<?php
+
+namespace App\Http\Controllers\Backend;
+
+
+use Illuminate\Http\Request;
+use Intervention\Image\ImageManagerStatic as Image;
+use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use DB;
+use Auth;
+
+use App\Models\Brands;
+use App\Models\AdminActivities;
+
+
+class BrandsController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    function __construct()
+    {
+        $this->middleware('permission:brands-list|brands-create|brands-edit|brands-delete', ['only' => ['index', 'store']]);
+        $this->middleware('permission:brands-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:brands-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:brands-delete', ['only' => ['destroy']]);
+        date_default_timezone_set('Asia/Dubai');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $data = Brands::orderBy('order_no', 'ASC')->select('id', 'name', 'image', 'status', 'order_no')->get();
+
+        return view('backend.brands.index', compact('data'));
+    }
+
+    public function updateOrder(Request $request)
+    {
+        $tasks = Brands::all();
+
+        foreach ($tasks as $task) {
+            $id = $task->id;
+
+            foreach ($request->order as $order) {
+                if ($order['id'] == $id) {
+                    $task->update(['order_no' => $order['position']]);
+                }
+            }
+        }
+
+        $admin_activity = AdminActivities::create([
+            'user_id' => Auth::user()->id,
+            'activity' => 'updated order no of Our Brands section',
+        ]);
+
+        return response('Update Successfully.', 200);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('backend.brands.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+        $this->validate($request, [
+            'name'              => 'required|unique:brands,name',
+            'brand_image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('brand_image')) {
+            $image              = $request->file('brand_image');
+            $name               = time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath    = public_path('/uploads/brands');
+            $image->move($destinationPath, $name);
+        }
+
+        Brands::create([
+            'name'      =>  $request->name,
+            'image'     =>  $name,
+            'order_no'  =>  1,
+            'status'    =>  $request->active ? 1 : 0 ?? 0,
+        ]);
+
+        $admin_activity = AdminActivities::create([
+            'user_id' => Auth::user()->id,
+            'activity' => 'added new partner',
+        ]);
+
+        return redirect()->route('brands.index')
+            ->with('success', 'Brand created successfully');
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    /*public function show($id)
+    {
+        $role = Role::find($id);
+        $rolePermissions = Permission::join("role_has_permissions","role_has_permissions.permission_id","=","permissions.id")
+            ->where("role_has_permissions.role_id",$id)
+            ->get();
+    
+        return view('backend.roles.show',compact('role','rolePermissions'));
+    }*/
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $data = Brands::find($id);
+
+        return view('backend.brands.edit', compact('data'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name'              => 'required|sometimes|unique:brands,name,' . $id,
+            'brand_image'     => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $data = Brands::find($id);
+        $data->name   = $request->input('name');
+        $data->status = $request->active ? 1 : 0 ?? 0;
+
+        if ($request->hasFile('brand_image')) {
+            $image              = $request->file('brand_image');
+            $name               = time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath    = public_path('/uploads/brands');
+            $image->move($destinationPath, $name);
+            $data->image = $name;
+        }
+        $data->save();
+
+        $admin_activity = AdminActivities::create([
+            'user_id' => Auth::user()->id,
+            'activity' => 'updated partner details of ' . $request->input('name'),
+        ]);
+
+        return redirect()->route('brands.index')
+            ->with('success', 'Brand details updated successfully');
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        DB::table("brands")->where('id', $id)->delete();
+        $admin_activity = AdminActivities::create([
+            'user_id' => Auth::user()->id,
+            'activity' => 'deleted partner details of ' . $id,
+        ]);
+
+        return redirect()->route('brands.index')
+            ->with('success', 'Brand details deleted successfully');
+    }
+}

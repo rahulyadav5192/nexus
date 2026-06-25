@@ -1,0 +1,110 @@
+@php
+  $bulletPointsText = old('bullet_points', isset($data) && is_array($data->bullet_points) ? implode("\n", $data->bullet_points) : '');
+  $highlightsText = '';
+  if (old('highlights')) {
+      $highlightsText = old('highlights');
+  } elseif (isset($data) && is_array($data->highlights)) {
+      $highlightsText = collect($data->highlights)->map(function ($item) {
+          return ($item['value'] ?? '') . '|' . ($item['suffix'] ?? '') . '|' . ($item['label'] ?? '');
+      })->implode("\n");
+  }
+@endphp
+
+<div class="col-xs-12 col-sm-12 col-md-6">
+  <div class="form-group">
+    <strong>Title:</strong>
+    {!! Form::text('name', null, ['placeholder' => 'e.g. Gold Sourcing', 'class' => 'form-control', 'required']) !!}
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6">
+  <div class="form-group">
+    <strong>Category Tag:</strong>
+    {!! Form::text('category_tag', null, ['placeholder' => 'Label shown on image', 'class' => 'form-control', 'required']) !!}
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6">
+  <div class="form-group">
+    <strong>Category Slug:</strong>
+    {!! Form::text('category_slug', null, ['placeholder' => 'e.g. sourcing', 'class' => 'form-control', 'required']) !!}
+    <small class="text-muted">Used for filtering (data-cat attribute).</small>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6">
+  <div class="form-group">
+    <strong>Reveal Animation:</strong>
+    {!! Form::select('reveal_delay', ['' => 'Default', 'd1' => 'Delay 1', 'd2' => 'Delay 2'], null, ['class' => 'form-control']) !!}
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="form-group">
+    <strong>Image:</strong>
+    <br />
+    <input type="file" name="service_image" @if(!isset($data)) @endif>
+    @if ($errors->has('service_image'))
+    <span class="invalid-feedback d-block" role="alert">
+      <strong>{{ $errors->first('service_image') }}</strong>
+    </span>
+    @endif
+    @if(isset($data) && $data->image)
+    <div class="mt-2">
+      <img src="{{ $data->image_url }}" width="200" alt="{{ $data->image_alt ?? $data->name }}">
+    </div>
+    @endif
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="form-group">
+    <strong>Or Image Path / URL:</strong>
+    {!! Form::text('image_path', old('image_path', isset($data) ? $data->image : null), ['placeholder' => 'nexus/images/example.webp or https://...', 'class' => 'form-control']) !!}
+    <small class="text-muted">Use when not uploading a file. Supports nexus asset paths or external URLs.</small>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="form-group">
+    <strong>Image Alt Text:</strong>
+    {!! Form::text('image_alt', null, ['placeholder' => 'Image description for accessibility', 'class' => 'form-control']) !!}
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="form-group">
+    <strong>Description:</strong>
+    {!! Form::textarea('short_description', null, ['placeholder' => 'Main paragraph shown on the operations card', 'class' => 'form-control', 'rows' => 4, 'required']) !!}
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="form-group">
+    <strong>Bullet Points:</strong>
+    <textarea name="bullet_points" class="form-control" rows="5" placeholder="One item per line">{{ $bulletPointsText }}</textarea>
+    <small class="text-muted">Shown as a list. Leave empty if using highlights instead.</small>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="form-group">
+    <strong>Highlights:</strong>
+    <textarea name="highlights" class="form-control" rows="4" placeholder="value|suffix|label">{{ $highlightsText }}</textarea>
+    <small class="text-muted">One per line, e.g. <code>3|kg|Daily chain production</code>. Used instead of bullet points when set.</small>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="form-group">
+    <strong>Extended Description (optional):</strong>
+    {!! Form::textarea('description', null, ['placeholder' => 'Optional long description', 'class' => 'form-control', 'rows' => 3]) !!}
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6">
+  <div class="form-group">
+    {{ Form::label('active', 'Active') }}
+    {{ Form::checkbox('active', 1, isset($data) ? (bool) $data->status : true) }}
+  </div>
+</div>

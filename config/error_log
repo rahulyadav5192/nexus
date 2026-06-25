@@ -1,0 +1,96 @@
+[20-Jan-2026 18:16:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/services.php on line 18
+[20-Jan-2026 18:16:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/mail.php on line 16
+[24-Feb-2026 01:41:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/database.php on line 18
+[24-Feb-2026 01:41:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/database.php on line 18
+[24-Feb-2026 01:41:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/services.php on line 18
+[24-Feb-2026 01:41:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/services.php on line 18
+[26-Feb-2026 03:03:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/filesystems.php on line 16
+[26-Feb-2026 03:03:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/mail.php on line 16
+[26-Feb-2026 03:03:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/queue.php on line 16
+[26-Feb-2026 03:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/services.php on line 18
+[04-Mar-2026 04:34:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/database.php on line 18
+[04-Mar-2026 04:34:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/database.php on line 18
+[04-Mar-2026 04:35:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/services.php on line 18
+[04-Mar-2026 04:35:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/services.php on line 18
+[19-Mar-2026 18:45:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/database.php on line 18
+[19-Mar-2026 19:50:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/database.php on line 18
+[22-Mar-2026 21:33:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/services.php on line 18
+[14-Apr-2026 14:35:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/mail.php on line 16
+[14-Apr-2026 14:39:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/database.php on line 18
+[14-Apr-2026 14:42:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/app.php on line 16
+[14-Apr-2026 14:44:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/services.php on line 18
+[10-May-2026 17:05:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/database.php on line 18
+[10-May-2026 19:35:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/mail.php on line 16
+[16-Jun-2026 17:46:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pgldubaicom/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pgldubaicom/public_html/config/app.php on line 16

@@ -1,0 +1,142 @@
+:root {
+    --admin-primary: #0B2820;
+    --admin-primary-light: #145c46;
+    --admin-primary-dark: #071a14;
+}
+
+.navbar-danger {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+}
+
+.sidebar-dark-indigo .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-light-indigo .nav-sidebar > .nav-item > .nav-link.active {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+    color: #fff;
+}
+
+[class*="sidebar-light-"] .nav-treeview > .nav-item > .nav-link.active,
+[class*="sidebar-light-"] .nav-treeview > .nav-item > .nav-link.active:hover {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+    color: #ffffff;
+}
+
+[class*="sidebar-light-"] .nav-treeview > .nav-item > .nav-link:hover {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    color: #ffffff;
+}
+
+.badge-primary {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+}
+
+.main-footer {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+    color: #ffffff;
+}
+
+.card-primary:not(.card-outline) > .card-header {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+}
+
+.card-primary.card-outline {
+    border-top-color: var(--admin-primary);
+}
+
+.card-primary.card-outline > .card-header {
+    border-bottom-color: var(--admin-primary);
+    color: var(--admin-primary);
+}
+
+.btn-primary {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+    border-color: var(--admin-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled):active {
+    background: linear-gradient(46deg, var(--admin-primary-dark), var(--admin-primary));
+    border-color: var(--admin-primary-dark);
+}
+
+.btn-outline-primary {
+    color: var(--admin-primary);
+    border-color: var(--admin-primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+    border-color: var(--admin-primary);
+    color: #ffffff;
+}
+
+.btn-success {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+    border-color: var(--admin-primary);
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+    background: linear-gradient(46deg, var(--admin-primary-dark), var(--admin-primary));
+    border-color: var(--admin-primary-dark);
+}
+
+.card {
+    box-shadow: 0 0 1px rgba(11, 40, 32, 0.25), 0 1px 3px rgba(11, 40, 32, 0.15);
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+    color: #ffffff;
+}
+
+.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+}
+
+.layout-fixed .main-sidebar {
+    overflow-x: auto;
+    text-align: justify;
+}
+
+.nav-sidebar .nav-link > .right:nth-child(2),
+.nav-sidebar .nav-link > p > .right:nth-child(2) {
+    right: 1.52rem;
+}
+
+.page-item.active .page-link {
+    background-color: var(--admin-primary);
+    border-color: var(--admin-primary);
+}
+
+.page-link {
+    color: var(--admin-primary);
+}
+
+.page-link:hover {
+    color: var(--admin-primary-dark);
+}
+
+.icheck-primary > input:first-child:checked + input[type="hidden"] + label::before,
+.icheck-primary > input:first-child:checked + label::before {
+    background-color: var(--admin-primary);
+    border-color: var(--admin-primary);
+}
+
+.login-page,
+.register-page {
+    background: linear-gradient(46deg, var(--admin-primary-dark), var(--admin-primary-light));
+}
+
+.login-card-body .btn-primary {
+    background: linear-gradient(46deg, var(--admin-primary), var(--admin-primary-light));
+    border-color: var(--admin-primary);
+}

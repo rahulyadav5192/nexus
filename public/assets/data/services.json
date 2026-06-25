@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ocean",
+    "title": "Air Frieght",
+    "slug": "ocean-freight",
+    "heroImage": "assets/img/service/hero.jpg",
+    "thumb": "assets/img/service/hero.jpg",
+    "intro": "When time is critical, our air freight services are your fastest and most reliable option. With daily worldwide departures, we ensure your cargo—whether perishables, hazardous materials, or any time-sensitive goods—reaches its destination quickly and safely. Our global network gives you access to seamless solutions tailored to your needs, with full visibility and support every step of the way.",
+    "description": "<p>We provide reliable ocean freight for all cargo types, with global partners and end-to-end tracking.</p>",
+    "features": [
+      "FCL & LCL Services",
+      "Project Cargo",
+      "Door-to-door delivery"
+    ],
+    "brochures": [
+      { "label": "Download PDF", "url": "assets/brochures/ocean.pdf" }
+    ]
+  },
+  {
+    "id": "air",
+    "title": "Air Freight",
+    "slug": "air-freight",
+    "heroImage": "assets/img/service/air.jpg",
+    "thumb": "assets/img/service/air-thumb.jpg",
+    "intro": "Fast air freight for time-sensitive shipments and perishables.",
+    "description": "<p>Our air freight services are built for speed and visibility across global lanes.</p>",
+    "features": ["Priority handling", "Temperature control", "Customs support"],
+    "brochures": [
+      { "label": "Download PDF", "url": "assets/brochures/air.pdf" }
+    ]
+  }
+]

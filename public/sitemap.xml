@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core pages -->
+  <url>
+    <loc>https://pgldubai.com/</loc>
+  </url>
+  <url>
+    <loc>https://pgldubai.com/about</loc>
+  </url>
+  <url>
+    <loc>https://pgldubai.com/services</loc>
+  </url>
+  <url>
+    <loc>https://pgldubai.com/associates</loc>
+  </url>
+  <url>
+    <loc>https://pgldubai.com/careers</loc>
+  </url>
+  <url>
+    <loc>https://pgldubai.com/contact-us</loc>
+  </url>
+
+  <!-- Legal / info pages -->
+  <url>
+    <loc>https://pgldubai.com/privacy-policy</loc>
+  </url>
+  <url>
+    <loc>https://pgldubai.com/terms-and-conditions</loc>
+  </url>
+
+  <!-- Blog listing -->
+  <url>
+    <loc>https://pgldubai.com/blogs</loc>
+  </url>
+</urlset>
