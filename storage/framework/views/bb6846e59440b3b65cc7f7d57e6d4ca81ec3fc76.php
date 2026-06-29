@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Nexus Group Holdings — Gold, Luxury & Global Investments'); ?>
 <?php $__env->startSection('active_page', 'home'); ?>
 
@@ -35,8 +37,57 @@
 
     /* Roadmap editorial redesign */
     .roadmap-editorial {
-      background: var(--paper-2);
+      position: relative;
+      overflow: hidden;
       padding-block: var(--section-y)
+    }
+
+    .roadmap-parallax-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('<?php echo e(asset('nexus/images/nexcorp-internation.webp')); ?>');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      z-index: 0
+    }
+
+    .roadmap-parallax-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 6, 3, .88)
+    }
+
+    .roadmap-wrap {
+      position: relative;
+      z-index: 1
+    }
+
+    .roadmap-editorial h2,
+    .roadmap-editorial h3 {
+      color: #F5EFE3
+    }
+
+    .roadmap-editorial p,
+    .roadmap-editorial li {
+      color: rgba(245, 239, 227, .6)
+    }
+
+    .roadmap-editorial .eyebrow {
+      color: var(--gold-soft)
+    }
+
+    .roadmap-editorial .rm-phases {
+      border-top-color: rgba(255,255,255,.1)
+    }
+
+    .roadmap-editorial .rm-phase {
+      border-right-color: rgba(255,255,255,.1)
+    }
+
+    .roadmap-editorial .link-arrow {
+      color: #F5EFE3 !important
     }
 
     .rm-intro {
@@ -119,6 +170,160 @@
 
     .rm-live h3 {
       color: var(--ink)
+    }
+
+    /* Testimonials */
+    .testi-section {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line)
+    }
+
+    .testi-parallax-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('<?php echo e(asset('nexus/images/nexus-gold-and-diamonds.webp')); ?>');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      z-index: 0
+    }
+
+    .testi-parallax-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 6, 3, .9)
+    }
+
+    .testi-wrap {
+      position: relative;
+      z-index: 1
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+      margin-top: clamp(2.5rem, 5vw, 4rem)
+    }
+
+    .testi-card {
+      background: var(--card);
+      border-radius: var(--r);
+      padding: clamp(1.8rem, 3vw, 2.4rem);
+      position: relative;
+      box-shadow: var(--shadow)
+    }
+
+    .testi-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--gold)
+    }
+
+    .testi-quote {
+      font-family: var(--serif);
+      font-size: 3.2rem;
+      line-height: .7;
+      color: var(--gold);
+      opacity: .5;
+      margin-bottom: 1.2rem;
+      display: block
+    }
+
+    .testi-text {
+      color: var(--ink-dim);
+      font-size: .95rem;
+      line-height: 1.75;
+      font-style: italic
+    }
+
+    .testi-author {
+      margin-top: 1.6rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line)
+    }
+
+    .testi-name {
+      font-weight: 600;
+      font-size: .88rem;
+      color: var(--ink);
+      letter-spacing: .02em
+    }
+
+    .testi-role {
+      font-size: .78rem;
+      color: var(--gold);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-top: .25rem
+    }
+
+    @media(max-width:900px) {
+      .testi-grid { grid-template-columns: 1fr 1fr }
+    }
+
+    @media(max-width:600px) {
+      .testi-grid { grid-template-columns: 1fr }
+    }
+
+    /* Ecosystem directory parallax */
+    #ecosystem-dir {
+      position: relative;
+      overflow: hidden
+    }
+
+    .eco-dir-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('<?php echo e(asset('nexus/images/bg.webp')); ?>');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      z-index: 0
+    }
+
+    .eco-dir-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 6, 3, .82)
+    }
+
+    .eco-dir-grid {
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .eco-stat {
+      border-color: rgba(255, 255, 255, .08)
+    }
+
+    .eco-sub {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: .5rem 0 .8rem
+    }
+
+    .eco-loc {
+      font-size: .88rem;
+      color: #fff;
+      line-height: 1.7;
+      margin-top: .5rem
+    }
+
+    @media(max-width:900px) {
+      .eco-dir-grid { grid-template-columns: repeat(2, 1fr) }
+    }
+
+    @media(max-width:500px) {
+      .eco-dir-grid { grid-template-columns: 1fr }
     }
 
     /* CTA with image background */
@@ -336,21 +541,57 @@
           <div class="label">Business Divisions</div>
           <div class="desc">Sourcing, refining, manufacturing, retail, e-commerce &amp; investments.</div>
         </div>
-        <div class="stat reveal">
-          <div class="num"><span data-count="2" data-pad="true">00</span></div>
-          <div class="label">Retail Showrooms</div>
-          <div class="desc">Shop No. 13 Sharjah Gold Centre (Rolla) &amp; Shop No. 02 Safa Mall Nesto, RAK (Nakheel).
-          </div>
-        </div>
         <div class="stat reveal d1">
           <div class="num"><span data-count="1" data-pad="true">00</span></div>
           <div class="label">Gold Elution Plant</div>
           <div class="desc">NEXCORP Refinery &amp; Elution Plant in Uganda &mdash; 2 tons/day, expanding to 5 tons.</div>
         </div>
-        <div class="stat reveal d2">
+        <div class="stat reveal d2" style="grid-column:span 2">
           <div class="num">2030</div>
           <div class="label">Global Vision</div>
           <div class="desc">Roadmap toward international markets, IPO readiness on DFM/ADX.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ BUSINESS ECOSYSTEM DIRECTORY ============ -->
+  <section id="ecosystem-dir">
+    <div class="eco-dir-bg"></div>
+    <div class="wrap" style="position:relative;z-index:1">
+      <div class="stats-head">
+        <h2 class="reveal" style="color:#fff">Our Business <span class="serif-i" style="color:var(--gold-soft)">Ecosystem.</span></h2>
+      </div>
+      <div class="stats-grid eco-dir-grid">
+        <div class="stat eco-stat reveal">
+          <div class="num" style="color:var(--gold-soft)">01</div>
+          <div class="label" style="color:rgba(255,255,255,.45)">Nexus Capital Markets</div>
+          <div class="eco-sub">Investments &amp; Wealth Management</div>
+          <div class="eco-loc">Saheel Tower 2, Office 607<br>Dubai, UAE</div>
+        </div>
+        <div class="stat eco-stat reveal d1">
+          <div class="num" style="color:var(--gold-soft)">01</div>
+          <div class="label" style="color:rgba(255,255,255,.45)">Nexus Chains</div>
+          <div class="eco-sub">Gold Jewellery Manufacturing</div>
+          <div class="eco-loc">Umm Altarafa &ndash; Al Gharb<br>Sharjah, UAE</div>
+        </div>
+        <div class="stat eco-stat reveal d2">
+          <div class="num" style="color:var(--gold-soft)">01</div>
+          <div class="label" style="color:rgba(255,255,255,.45)">Nexcorp Refinery &amp; Elution Plant</div>
+          <div class="eco-sub">Uganda Operations</div>
+          <div class="eco-loc">Uganda</div>
+        </div>
+        <div class="stat eco-stat reveal d3">
+          <div class="num" style="color:var(--gold-soft)">02</div>
+          <div class="label" style="color:rgba(255,255,255,.45)">Retail Showrooms</div>
+          <div class="eco-sub">Nexus Gold and Diamond</div>
+          <div class="eco-loc">
+            <span style="display:block;font-weight:600;color:rgba(255,255,255,.8)">1. Sharjah Gold Centre (Rolla)</span>
+            Shop No. 13
+            <span style="display:block;font-weight:600;color:rgba(255,255,255,.8);margin-top:.5rem">2. Safa Mall Nesto, RAK (Nakheel)</span>
+            Shop No. 2
+          </div>
         </div>
       </div>
     </div>
@@ -413,7 +654,7 @@
         </a>
         <a class="eco-card reveal d1" href="<?php echo e(route('investors')); ?>">
           <div class="bg"><img loading="lazy"
-              src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src="<?php echo e(asset('nexus/images/investment-divison.webp')); ?>"
               alt="Global investment and finance"></div>
           <span class="top"></span>
           <div class="inner">
@@ -439,7 +680,8 @@
 
   <!-- ============ ROADMAP ============ -->
   <section class="roadmap-editorial" id="roadmap">
-    <div class="wrap">
+    <div class="roadmap-parallax-bg"></div>
+    <div class="wrap roadmap-wrap">
       <div class="rm-intro">
         <div>
           <span class="eyebrow reveal">Expansion Roadmap</span>
@@ -452,7 +694,7 @@
             listed
             group by 2030.</p>
           <a class="link-arrow" href="<?php echo e(route('expansion')); ?>"
-            style="display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)">Full
+            style="display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#F5EFE3">Full
             Expansion Plan <span class="arr" style="color:var(--gold)">&rarr;</span></a>
         </div>
       </div>
@@ -544,6 +786,31 @@
       </div>
     </div>
   </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <?php if(isset($testimonials) && $testimonials->isNotEmpty()): ?>
+  <section class="testi-section" id="testimonials">
+    <div class="testi-parallax-bg"></div>
+    <div class="wrap testi-wrap">
+      <span class="eyebrow reveal">What People Say</span>
+      <h2 class="reveal d1" style="margin-top:1.6rem;font-size:var(--fs-h2);font-weight:300;max-width:20ch">
+        Trusted by partners, clients &amp; <span class="serif-i">investors alike.</span></h2>
+
+      <div class="testi-grid">
+        <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="testi-card reveal<?php echo e($index > 0 ? ' d' . min($index, 2) : ''); ?>">
+          <span class="testi-quote">&ldquo;</span>
+          <p class="testi-text"><?php echo e($testimonial->quotes); ?></p>
+          <div class="testi-author">
+            <div class="testi-name"><?php echo e($testimonial->person_name); ?></div>
+            <div class="testi-role"><?php echo e($testimonial->designation); ?></div>
+          </div>
+        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
 
   <!-- ============ CTA BAND ============ -->
   <section class="cta-video-band">

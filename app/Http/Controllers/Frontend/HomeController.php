@@ -16,7 +16,7 @@ use App\Models\ContactUs;
 use App\Models\Categories;
 use App\Models\Subscribers;
 use App\Models\MetaTags;
-use App\Models\FeaturedProducts;
+use App\Models\Testimonials;
 use App\Models\Brands;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Http;
@@ -85,12 +85,18 @@ class HomeController extends Controller
             ->where('product_items.status', 1)
             ->orderBy('product_items.order_no', 'ASC')
             ->get();
+
+        $testimonials = Testimonials::where('status', 1)
+            ->orderBy('order_no', 'ASC')
+            ->limit(3)
+            ->get();
         
         return view('frontend.nexus.index', compact(
             'banner',
             'meta_tags',
             'blogs',
-            'services'
+            'services',
+            'testimonials'
         ));
     }
 

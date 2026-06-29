@@ -1,9 +1,9 @@
-@extends('layouts.nexus')
 
-@section('title', 'Leadership — Nexus Group Holdings')
-@section('active_page', 'leadership')
 
-@section('content')
+<?php $__env->startSection('title', 'Leadership — Nexus Group Holdings'); ?>
+<?php $__env->startSection('active_page', 'leadership'); ?>
+
+<?php $__env->startSection('content'); ?>
 <!-- SUB-HERO -->
   <section class="subhero" style="min-height:54dvh">
     <div class="subhero-media">
@@ -11,7 +11,7 @@
         poster="https://images.pexels.com/photos/1370882/pexels-photo-1370882.jpeg?auto=compress&cs=tinysrgb&w=1920"
         style="width:100%;height:100%;object-fit:cover;display:block">
         <source src="https://www.pexels.com/download/video/8397996/" type="video/mp4">
-        <track kind="captions" src="{{ asset('nexus/empty.vtt') }}" label="No dialogue">
+        <track kind="captions" src="<?php echo e(asset('nexus/empty.vtt')); ?>" label="No dialogue">
       </video>
     </div>
     <div class="wrap">
@@ -27,7 +27,7 @@
     <div class="wrap">
       <span class="eyebrow reveal">From The CEO</span>
       <div class="ceo" style="margin-top: 0.5rem;">
-        <div class="ceo-portrait reveal d1"><img src="{{ asset('nexus/images/al-ameen-ceo.webp') }}"
+        <div class="ceo-portrait reveal d1"><img src="<?php echo e(asset('nexus/images/al-ameen-ceo.webp')); ?>"
             alt="Al Ameen, CEO and Founder — Nexus Group Holdings"></div>
         <div class="ceo-body reveal d2">
           <p class="ceo-quote" style="font-size: clamp(1.2rem, 2vw, 1.8rem);">"We are driven by a vision that extends
@@ -64,13 +64,13 @@
       <div class="group-label reveal">Promoters</div>
       <div class="lead-grid">
         <div class="person reveal">
-          <div class="frame"><img src="{{ asset('nexus/images/shareef.webp') }}"
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/shareef.webp')); ?>"
               alt="Shareef, Promoter — Nexus Group Holdings"></div>
           <div class="name">Shareef</div>
           <div class="role">Promotor (MD - Al Madeena Group)</div>
         </div>
         <div class="person reveal d1">
-          <div class="frame"><img src="{{ asset('nexus/images/noor-mohmd.webp') }}" alt="Noor Mohammed K, Promoter — Nexus Group Holdings"></div>
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/noor-mohmd.webp')); ?>" alt="Noor Mohammed K, Promoter — Nexus Group Holdings"></div>
           <div class="name">Noor Mohammed K</div>
           <div class="role">Promotor (Chairman &amp; CEO - Panorama Oils)</div>
         </div>
@@ -79,23 +79,23 @@
       <div class="group-label reveal">Founders</div>
       <div class="lead-grid">
         <div class="person reveal">
-          <div class="frame"><img src="{{ asset('nexus/images/al-ameen.webp') }}" alt="Al Ameen, CEO & Founder — Nexus Group Holdings"></div>
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/al-ameen.webp')); ?>" alt="Al Ameen, CEO & Founder — Nexus Group Holdings"></div>
           <div class="name">Al Ameen</div>
           <div class="role">CEO &amp; Founder</div>
         </div>
         <div class="person reveal d1">
-          <div class="frame"><img src="{{ asset('nexus/images/shoukathali.webp') }}" alt="Shoukath MT, MD & Founder — Nexus Group Holdings"></div>
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/shoukathali.webp')); ?>" alt="Shoukath MT, MD & Founder — Nexus Group Holdings"></div>
           <div class="name">Shoukath MT</div>
           <div class="role">MD &amp; Founder</div>
         </div>
         <div class="person reveal d2">
-          <div class="frame"><img src="{{ asset('nexus/images/noushad-karanath.webp') }}"
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/noushad-karanath.webp')); ?>"
               alt="Noushad Karanath, Founder & Head of Operations — Nexus Group Holdings"></div>
           <div class="name">Noushad Karanath</div>
           <div class="role">Founder &amp; Head of Operations</div>
         </div>
         <div class="person reveal d3">
-          <div class="frame"><img src="{{ asset('nexus/images/kader-muneer.webp') }}" alt="Kader Muneer, Founder & HR — Nexus Group Holdings"></div>
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/kader-muneer.webp')); ?>" alt="Kader Muneer, Founder & HR — Nexus Group Holdings"></div>
           <div class="name">Kader Muneer</div>
           <div class="role">Founder &amp; HR</div>
         </div>
@@ -111,17 +111,17 @@
 
       <div class="lead-grid" style="margin-top:2rem">
         <div class="person reveal">
-          <div class="frame"><img src="{{ asset('nexus/images/nisar.webp') }}" alt="Nisar Chola"></div>
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/nisar.webp')); ?>" alt="Nisar Chola"></div>
           <div class="name">Nisar Chola</div>
           <div class="role">Director</div>
         </div>
         <div class="person reveal d1">
-          <div class="frame"><img src="{{ asset('nexus/images/mutumba-ahmed.webp') }}" alt="Mutumba Ahmed"></div>
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/mutumba-ahmed.webp')); ?>" alt="Mutumba Ahmed"></div>
           <div class="name">Mutumba Ahmed</div>
           <div class="role">Director</div>
         </div>
         <div class="person reveal d2">
-          <div class="frame"><img src="{{ asset('nexus/images/abdul-naser.webp') }}" alt="Abdul Naser"></div>
+          <div class="frame"><img src="<?php echo e(asset('nexus/images/abdul-naser.webp')); ?>" alt="Abdul Naser"></div>
           <div class="name">Abdul Naser</div>
           <div class="role">Director</div>
         </div>
@@ -137,7 +137,7 @@
         poster="https://images.pexels.com/photos/1370882/pexels-photo-1370882.jpeg?auto=compress&cs=tinysrgb&w=1920"
         style="width:100%;height:100%;object-fit:cover;display:block">
         <source src="https://www.pexels.com/download/video/8397996/" type="video/mp4">
-        <track kind="captions" src="{{ asset('nexus/empty.vtt') }}" label="No dialogue">
+        <track kind="captions" src="<?php echo e(asset('nexus/empty.vtt')); ?>" label="No dialogue">
       </video>
       <div class="cta-overlay-dark"></div>
       <div class="cta-overlay-glow"></div>
@@ -150,10 +150,12 @@
         Build your future <span class="serif-i">with Nexus.</span>
       </h2>
       <div class="reveal d3" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2.6rem">
-        <a class="btn solid reveal d2" href="{{ route('careers') }}"><span>View Careers</span> <span class="arr">&rarr;</span></a>
+        <a class="btn solid reveal d2" href="<?php echo e(route('careers')); ?>"><span>View Careers</span> <span class="arr">&rarr;</span></a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.nexus', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/nexus/resources/views/frontend/nexus/leadership.blade.php ENDPATH**/ ?>
